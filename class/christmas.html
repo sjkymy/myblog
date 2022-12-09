@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>christ</title>
+</head>
+<body>
+    <script>
+        // function Xmas(name, price, color, size) {
+        //     this.name = name;
+        //     this.price = price;
+        //     this.color = color;
+        //     this.size = size;
+        // }
+
+        // Xmas.prototype.productInfo = function () {
+        //     console.log(`이 제품은 ${this.name}입니다.`)
+        // }
+
+        // const product1 = new Xmas("크리스마스 트리", 10000, "green", "XL");
+        // const product2 = new Xmas("풍선", 3000, "random", "L");
+        // console.log(product1);  // {name: '크리스마스 트리', price: 10000, color: 'green', size: 'XL'}
+        // console.log(product1.productInfo());  // 이 제품은 크리스마스 트리입니다.
+        // console.log(product2.productInfo());  // 이 제품은 풍선입니다.
+        // console.log(product1.productInfo === product2.productInfo);  // true
+
+
+        // class Xmas {
+        //     constructor(name, price, color, size) {
+        //         this.name = name;
+        //         this.price = price;
+        //         this.color = color;
+        //         this.size = size;
+        //     }
+
+        //     productInfo() {
+        //     console.log(`이 제품은 ${this.name}입니다.`)
+        //     }
+        // }
+
+        // const product1 = new Xmas("크리스마스 트리", 10000, "green", "XL");
+        // const product2 = new Xmas("풍선", 3000, "random", "L")
+        // console.log(product1);
+        // console.log(product1.productInfo());
+        // console.log(product2.productInfo());
+        // console.log(product1.productInfo === product2.productInfo);
+
+
+
+        // const product1 = {
+        //     name : "크리스마스 트리",
+        //     price : 10000,
+        //     color : "green",
+        //     size : "XL"
+        // }
+
+        // const product2 = {
+        //     name : "풍선",
+        //     price : 3000,
+        //     color : "random",
+        //     size : "L"
+        // }
+
+        // const product3 = {
+        //     name : "눈꽃 스티커",
+        //     price : 2000,
+        //     color : "random",
+        //     size : "M"
+        // }
+
+        // const product4 = {
+        //     name : "산타 모자",
+        //     price : 5000,
+        //     color : "red",
+        //     size : "L"
+        // }
+
+        // 부모 class
+        class Xmas {
+            constructor(name, price) {
+                this.name = name;
+                this.price = price;
+            }
+
+            productInfo() {
+            console.log(`이 제품은 ${this.name}입니다. 가격은 ${this.price}원 입니다.`)
+            }
+        }
+
+        // const product1 = new Xmas("산타모자", 5000);
+        // console.log(product1.productInfo())  // 이 제품은 산타모자입니다. 가격은 5000원입니다.
+
+
+        // 자식 class
+        class XmasPrice extends Xmas {
+            constructor(name, price, color) {
+                super(name, price)
+                this.color = color;
+            }
+
+            colorInfo() {
+                this.productInfo()
+                console.log(`색상은 ${this.color}입니다.`);
+            }
+        }
+
+        const product1 = new XmasPrice("산타모자", 5000, "red");
+
+        console.log(product1.colorInfo())
+
+    </script>
+</body>
+</html>
